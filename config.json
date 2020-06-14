@@ -1,0 +1,100 @@
+{
+	"prefix": "s!",
+	"customMsg": ["with butterflies", "Ponies and Dragons", "with Neptune", "with explosives", "404: customMsg not found", "with Dincrod"],
+    "customStartingMsg": ["Entering hell...", "Making you fix more bugs...", "Not helping in your curriculum..."],
+    "clientOptions": {
+        "fetchAllMembers": false
+    },
+    "commandEditing": true,
+    "commandLogging": true,
+    "typing": false,
+    "providers": {
+        "default": "mongodb"
+    },
+    "tasks": [
+        {"taskName": "spotifyRenew", "cron": "0 * * * *"},
+        {"taskName": "lastMembers", "cron": "*/5 * * * *"}
+    ],
+    "gateways": [
+        {
+            "keys": [
+                {
+                    "name": "money", 
+                    "type": "integer", 
+                    "array": false,
+                    "default": 0
+                },
+                {
+                    "name": "pings", 
+                    "type": "integer", 
+                    "array": false,
+                    "default": 0
+                },
+                {
+                    "name": "crypto", 
+                    "type": "float", 
+                    "array": false,
+                    "default": 0
+                }],
+            "name": "users"
+        },
+        {
+            "keys": [
+                {
+                    "name": "cancerMode", 
+                    "type": "boolean", 
+                    "array": false,
+                    "default": false
+                }],
+            "name": "guilds"
+        },
+        {
+            "keys": [
+                {
+                    "name": "lastOtherImage", 
+                    "type": "url", 
+                    "array": false,
+                    "default": "https://i.imgur.com/IHexsQL.png"
+                },
+                {
+                    "name": "lastOtherImageTime", 
+                    "type": "integer", 
+                    "array": false,
+                    "default": 1
+                },
+                {
+                    "name": "lastSelfImage", 
+                    "type": "url", 
+                    "array": false,
+                    "default": "https://i.imgur.com/IHexsQL.png"
+                },
+                {
+                    "name": "lastSelfImageTime", 
+                    "type": "integer", 
+                    "array": false,
+                    "default": 1
+                },
+                {
+                    "name": "lastPin", 
+                    "type": "string", 
+                    "array": false,
+                    "default": ""
+                }],
+            "name": "textChannels"
+        }
+    ],
+    "fontFamilies": [
+        {
+            "name": "Noto Sans",
+            "fonts":   
+            [
+                "NotoSans-Regular.ttf",
+                "NotoEmoji-Regular.ttf",
+                "NotoSansCJKjp-Regular.otf",
+                "NotoSansCJKkr-Regular.otf",
+                "NotoSansCJKsc-Regular.otf",
+                "NotoSansCJKtc-Regular.otf"
+            ]
+        }    
+    ]
+}

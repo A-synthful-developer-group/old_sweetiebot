@@ -1,0 +1,27 @@
+{
+	"token" : "",
+	"catApi": "",
+	"youtube_api_key": "",
+	"anilist_id": "",
+	"anilist_secret": "",
+	"cleverbot_api": "",
+	"wolfram": "",
+	"makerWebhookCode": "",
+	"spotify": {
+		"clientID": "",
+		"clientSecret": "",
+		"refreshToken": ""
+	},
+	"shutterstock": {
+		"clientID": "",
+		"clientSecret": ""
+	},
+	"github": {
+		"user": "",
+		"password": ""
+	},
+	"imgur": {
+		"clientID": "",
+		"clientSecret": ""
+	}
+}

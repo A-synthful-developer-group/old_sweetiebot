@@ -1,0 +1,24 @@
+language: node_js
+node_js:
+- '11.1.0'
+before_install:
+- sudo apt-get install build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev
+after_success:
+- test $TRAVIS_BRANCH = "master" -a $TRAVIS_EVENT_TYPE = "push" -a $TRAVIS_REPO_SLUG = "ImUrX/sweetiebot-klasa" && ./deploy.sh
+jobs:
+  include:
+  - stage: test
+    script: npm test
+cache:
+  directories:
+  - node_modules
+notifications:
+  webhooks:
+    urls:
+    - https://travi-sweetiebot.herokuapp.com/webhook
+    on_success: always
+    on_failure: always
+    on_start: never
+env:
+  global:
+    secure: XbRpjU/T7SLLptSISUWZ53jqVoQ+oYGnK1wmUu3X2JoRIdTnz+f7dczVYK4CfZm9EhEhszVi0wq8yTffgPH4tZqfczsLa5GRWZawCbNWgh+YrO1YQwHjo8ld2mS61YAdlQK/8ORj3i39glU5lax/D4LqhcWo56wSTw1wFOzaVNd4Kgx7JmPYwBJGx2XwfuK83O5V84PTfYWjkbszAg0gJqUkT7RW6TuQ/UDj1zNthwgsiYw8LT0BStS19kYWEUcawHcmYcgHzIJN/yA1Itho3iVkY1KlZjjNDgBtw1QseqmSxf95dDEyM1jvOBYcC2/qMIEq8xEofSDtHNsi2Z4xh5gbqW4OGCAK+4qTIjoSNDWPUhMBGLtTefGPP8A8zOaz+qyFlojlQZMjlZjyJt9TT9YXxkB8Gioe701L3/Z+mLJtmj9qJOX4vPQAOxO7EWhb+cNRKCLRL/0dTSn6M3uGbO5MUr2TIw7bajDJqg5b3uZoLr7HUVb5zXWYi7JUVLzZoCH33LLeqJ0zjtpCS94eRt/OZC6DMULWHCtAk2oBr1j0wv88Ii+orkOLsUgBjSrjF4JvzjWFJ7XP+yJcTpYjnGHWbV5lm7mmoLrKIb/dZr3T2SJCudrtT0WNmVISsFgAbRXnzTyvBUxiymj5ihODVUH7TZ5ytF75T3pgAp7442c=
